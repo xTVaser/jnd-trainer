@@ -5,8 +5,176 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JnD_Trainer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Jak and Daxter Trainer - Splash Screen" Height="600" Width="750">
+    <Grid Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!-- Jak 1 Release / Demo -->
+            <RowDefinition Height="1*"/>
+            <!-- Jak 2 Release / Demo -->
+            <RowDefinition Height="1*"/>
+            <!-- Jak 3 Release / Demo -->
+            <RowDefinition Height="1*"/>
+            <!-- Jak X Release / Demo -->
+            <RowDefinition Height="1*"/>
+            <!-- Jak TLF Release / Demo -->
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Jak 1 Release / Demo -->
+        <Grid Grid.Row="0" Grid.Column="0" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak 1 - Release" 
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1" IsEnabled="False">
+                <Image Source="Assets/Games/jak1.png"/>
+            </Button>
+
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak 1 - Demo" 
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1" IsEnabled="False">
+                <Image Source="Assets/Games/jak1.png"/>
+            </Button>
+
+        </Grid>
+
+        <!-- Jak 2 Release / Demo -->
+        <Grid Grid.Row="1" Grid.Column="0" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak 2 - Release" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1">
+                <Image Source="Assets/Games/jak2.png"/>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak 2 - Demo" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1" IsEnabled="False">
+                <Image Source="Assets/Games/jak2.png"/>
+            </Button>
+        </Grid>
+
+
+        <!-- Jak 3 Release / Demo -->
+        <Grid Grid.Row="2" Grid.Column="0" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak 3 - Release" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1" IsEnabled="False">
+                <Image Source="Assets/Games/jak3.png"/>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak 3 - Demo" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1" IsEnabled="False">
+                <Image Source="Assets/Games/jak3.png"/>
+            </Button>
+        </Grid>
+
+        <!-- Jak X Release / Demo -->
+        <Grid Grid.Row="3" Grid.Column="0" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak X - Release" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1" IsEnabled="False">
+                <Image Source="Assets/Games/jakx.png"/>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak X - Demo" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1" IsEnabled="False">
+                <Image Source="Assets/Games/jakx.png"/>
+            </Button>
+        </Grid>
+
+        <!-- Jak TLF Release / Demo -->
+        <Grid Grid.Row="4" Grid.Column="0" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak X - Release" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1" IsEnabled="False">
+                <Image Source="Assets/Games/jaktlf.png"/>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="1" Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="Jak X - Demo" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold">
+            </Label>
+            <Button Grid.Row="1" IsEnabled="False">
+                <Image Source="Assets/Games/jaktlf.png"/>
+            </Button>
+        </Grid>
     </Grid>
 </Window>
