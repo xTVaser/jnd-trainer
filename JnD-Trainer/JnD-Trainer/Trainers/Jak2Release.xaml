@@ -1,0 +1,70 @@
+﻿<Window x:Class="JnD_Trainer.Trainers.Jak2Release"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JnD_Trainer.Trainers"
+        mc:Ignorable="d"
+        Title="Jak 2 - Release - Trainer" Height="1000" Width="1000">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <GroupBox Grid.Row="0" Grid.Column="0"
+            Header="Trainer Controls and Status">
+            
+        </GroupBox>
+
+        <GroupBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"
+                  Header="General Information">
+
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                  Header="Mission Information">
+
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"
+                  Header="Animation Controls">
+
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1"
+                  Header="Camera Controls">
+
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                  Header="Checkpoint and Level Controls">
+
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1" Grid.RowSpan="2"
+                  Header="Debug Options">
+
+        </GroupBox>
+
+        <GroupBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1"
+                  Header="Miscellaneous Controls">
+
+        </GroupBox>
+
+        <GroupBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
+                  Header="Custom Fields">
+
+        </GroupBox>
+    </Grid>
+</Window>

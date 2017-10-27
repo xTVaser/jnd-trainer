@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using JnD_Trainer.Trainers;
 
 namespace JnD_Trainer
 {
@@ -25,23 +26,23 @@ namespace JnD_Trainer
     {
         public MainWindow()
         {
-            Console.WriteLine("test");
-
-            var pcsx2 = Process.GetProcessesByName("pcsx2").First();
-            var sharp = new MemorySharp(pcsx2);
-
-            IntPtr address = new IntPtr(hexToInt("2000 0000"));
-
-            var bytes = sharp.Read<byte>(address, 16, isRelative: false);
-
-            for(int i = 0; i < bytes.Length; i++)
-            {
-                bytes[i]++;
-            }
-
-            sharp.Write<byte>(address, bytes, isRelative: false);
-
-            Console.WriteLine("Ye");
+//            Console.WriteLine("test");
+//
+//            var pcsx2 = Process.GetProcessesByName("pcsx2").First();
+//            var sharp = new MemorySharp(pcsx2);
+//
+//            IntPtr address = new IntPtr(hexToInt("2000 0000"));
+//
+//            var bytes = sharp.Read<byte>(address, 16, isRelative: false);
+//
+//            for(int i = 0; i < bytes.Length; i++)
+//            {
+//                bytes[i]++;
+//            }
+//
+//            sharp.Write<byte>(address, bytes, isRelative: false);
+//
+//            Console.WriteLine("Ye");
             
         }
 
@@ -66,6 +67,9 @@ namespace JnD_Trainer
         private void Jak2_Release_Click(object sender, RoutedEventArgs e)
         {
             // TODO implement
+            Jak2Release newWindow = new Jak2Release();
+            newWindow.Show();
+            this.Close();
         }
 
         private void Jak2_Demo_Click(object sender, RoutedEventArgs e)
