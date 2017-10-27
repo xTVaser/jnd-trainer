@@ -52,5 +52,55 @@ namespace JnD_Trainer
             hex = Regex.Replace(hex, @"\s+", "");
             return int.Parse(hex, System.Globalization.NumberStyles.HexNumber);
         }
+
+        private void Jak1_Release_Click(object sender, RoutedEventArgs e)
+        {
+            // Stub
+        }
+
+        private void Jak1_Demo_Click(object sender, RoutedEventArgs e)
+        {
+            // Stub
+        }
+
+        private void Jak2_Release_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO implement
+        }
+
+        private void Jak2_Demo_Click(object sender, RoutedEventArgs e)
+        {
+            // Stub
+        }
+
+        private void Jak3_Release_Click(object sender, RoutedEventArgs e)
+        {
+            // Stub
+        }
+
+        private void Jak3_Demo_Click(object sender, RoutedEventArgs e)
+        {
+            // Stub
+        }
+
+        private void JakX_Release_Click(object sender, RoutedEventArgs e)
+        {
+            // Stub
+        }
+
+        private void JakX_Demo_Click(object sender, RoutedEventArgs e)
+        {
+            // Stub
+        }
+
+        private void JakTLF_Release_Click(object sender, RoutedEventArgs e)
+        {
+            // Stub
+        }
+
+        private void JakTLF_Release1_Click(object sender, RoutedEventArgs e)
+        {
+            // Stub
+        }
     }
 }

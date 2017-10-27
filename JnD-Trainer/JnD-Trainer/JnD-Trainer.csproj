@@ -104,5 +104,14 @@
   <ItemGroup>
     <Resource Include="Fasm.NET.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Games\jak2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Games\jak1.png" />
+    <Resource Include="Assets\Games\jak3.png" />
+    <Resource Include="Assets\Games\jaktlf.png" />
+    <Resource Include="Assets\Games\jakx.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

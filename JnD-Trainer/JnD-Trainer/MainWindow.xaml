@@ -35,7 +35,7 @@
                    HorizontalAlignment="Center"
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1" IsEnabled="False">
+            <Button x:Name="Jak1_Release" Grid.Row="1" IsEnabled="False" Click="Jak1_Release_Click">
                 <Image Source="Assets/Games/jak1.png"/>
             </Button>
 
@@ -50,7 +50,7 @@
                    HorizontalAlignment="Center"
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1" IsEnabled="False">
+            <Button x:Name="Jak1_Demo" Grid.Row="1" IsEnabled="False" Click="Jak1_Demo_Click">
                 <Image Source="Assets/Games/jak1.png"/>
             </Button>
 
@@ -67,7 +67,7 @@
                    HorizontalAlignment="Center" 
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1">
+            <Button x:Name="Jak2_Release" Grid.Row="1" Click="Jak2_Release_Click">
                 <Image Source="Assets/Games/jak2.png"/>
             </Button>
         </Grid>
@@ -81,7 +81,7 @@
                    HorizontalAlignment="Center" 
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1" IsEnabled="False">
+            <Button x:Name="Jak2_Demo" Grid.Row="1" IsEnabled="False" Click="Jak2_Demo_Click">
                 <Image Source="Assets/Games/jak2.png"/>
             </Button>
         </Grid>
@@ -98,7 +98,7 @@
                    HorizontalAlignment="Center" 
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1" IsEnabled="False">
+            <Button x:Name="Jak3_Release" Grid.Row="1" IsEnabled="False" Click="Jak3_Release_Click">
                 <Image Source="Assets/Games/jak3.png"/>
             </Button>
         </Grid>
@@ -112,7 +112,7 @@
                    HorizontalAlignment="Center" 
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1" IsEnabled="False">
+            <Button x:Name="Jak3_Demo" Grid.Row="1" IsEnabled="False" Click="Jak3_Demo_Click">
                 <Image Source="Assets/Games/jak3.png"/>
             </Button>
         </Grid>
@@ -128,7 +128,7 @@
                    HorizontalAlignment="Center" 
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1" IsEnabled="False">
+            <Button x:Name="JakX_Release" Grid.Row="1" IsEnabled="False" Click="JakX_Release_Click">
                 <Image Source="Assets/Games/jakx.png"/>
             </Button>
         </Grid>
@@ -142,7 +142,7 @@
                    HorizontalAlignment="Center" 
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1" IsEnabled="False">
+            <Button x:Name="JakX_Demo" Grid.Row="1" IsEnabled="False" Click="JakX_Demo_Click">
                 <Image Source="Assets/Games/jakx.png"/>
             </Button>
         </Grid>
@@ -154,11 +154,11 @@
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" 
-                   Content="Jak X - Release" 
+                   Content="Jak TLF - Release" 
                    HorizontalAlignment="Center" 
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1" IsEnabled="False">
+            <Button x:Name="JakTLF_Release" Grid.Row="1" IsEnabled="False" Click="JakTLF_Release_Click">
                 <Image Source="Assets/Games/jaktlf.png"/>
             </Button>
         </Grid>
@@ -168,11 +168,11 @@
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" 
-                   Content="Jak X - Demo" 
+                   Content="Jak TLF - Demo" 
                    HorizontalAlignment="Center" 
                    FontWeight="Bold">
             </Label>
-            <Button Grid.Row="1" IsEnabled="False">
+            <Button x:Name="JakTLF_Release1" Grid.Row="1" IsEnabled="False" Click="JakTLF_Release1_Click">
                 <Image Source="Assets/Games/jaktlf.png"/>
             </Button>
         </Grid>
