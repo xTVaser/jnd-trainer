@@ -67,8 +67,8 @@ namespace JnD_Trainer
         private void Jak2_Release_Click(object sender, RoutedEventArgs e)
         {
             // TODO implement
-            Jak2Release newWindow = new Jak2Release();
-            newWindow.Show();
+            var newTrainer = new Trainers.Jak2Release.Trainer();
+            newTrainer.Show();
             this.Close();
         }
 

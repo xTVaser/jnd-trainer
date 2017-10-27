@@ -12,16 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace JnD_Trainer.Trainers
+namespace JnD_Trainer.Trainers.Jak2Release
 {
     /// <summary>
-    /// Interaction logic for Jak2.xaml
+    /// Interaction logic for Trainer.xaml
     /// </summary>
-    public partial class Jak2Release : Window
+    public partial class Trainer : Window
     {
-        public Jak2Release()
+        public Trainer()
         {
             InitializeComponent();
         }
+        
     }
 }

@@ -1,12 +1,11 @@
-﻿<Window x:Class="JnD_Trainer.Trainers.Jak2Release"
+﻿<Window x:Class="JnD_Trainer.Trainers.Jak2Release.Trainer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:JnD_Trainer.Trainers"
+        xmlns:local="clr-namespace:JnD_Trainer.Trainers.Jak2Release"
         mc:Ignorable="d"
-        Title="Jak 2 - Release - Trainer" Height="1000" Width="1000">
-    
+        Title="Trainer" Height="1000" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -14,17 +13,17 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        
+
         <GroupBox Grid.Row="0" Grid.Column="0"
-            Header="Trainer Controls and Status">
-            
+                  Header="Trainer Controls and Status">
+
         </GroupBox>
 
         <GroupBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"
