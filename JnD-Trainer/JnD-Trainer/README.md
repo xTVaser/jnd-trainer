@@ -18,6 +18,23 @@ GUI trainer for easier loading of levels, manipulation of addresses, etc.
       * orb count
       * skullgem count
     * inventory information
+      * Can Use Guns
+      * Blaster Rifle
+      * Scatter Gun
+      * Vulcan Fury
+      * Peacemaker
+      * Jetboard
+      * Daxter
+      * Dark Jak
+      * Scatter Gun Fire-Rate Upgrade
+      * Ammo Capacity Upgrade
+      * Weapon Damage Upgrade
+      * Red Barrier Clearence
+      * Green Barrier Clearence
+      * Yellow Barrier Clearence
+      * Dark Bomb
+      * Dark Blast
+      * Dark Invulnerability
   * mission infomation
     * current objective counter
     * current mission timer
