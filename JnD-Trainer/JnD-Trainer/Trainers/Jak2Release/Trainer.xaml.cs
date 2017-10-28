@@ -23,6 +23,20 @@ namespace JnD_Trainer.Trainers.Jak2Release
         {
             InitializeComponent();
         }
-        
+
+        private void returnToSplash_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void exportValues_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void importValues_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
