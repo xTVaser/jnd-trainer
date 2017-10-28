@@ -324,15 +324,189 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
-                  Header="Mission Information">
-
-        </GroupBox>
-
         <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"
                   Header="Animation Controls">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
 
+                <Label Grid.Row="0" Grid.Column="0" Content="Infinite Jump"></Label>
+                <CheckBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Jetboard Sideflip Stored"></Label>
+                <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+            </Grid>
         </GroupBox>
+
+        <GroupBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                  Header="Mission Information">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.75*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition Width="0.75*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition Width="0.75*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition Width="0.75*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="0" Text="Current Mission Counter" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+
+                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="2" Text="Current Mission Timer" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="3"></TextBox>
+
+                <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                          Header="Praxis 1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Boss HP (Not Found Yet)"></Label>
+                        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Position-X"></Label>
+                        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Position-Y"></Label>
+                        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Position-Z"></Label>
+                        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="4" Grid.Column="0" Content="Freeze Position"></Label>
+                        <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+                          Header="Praxis 2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Bomb Hits"></Label>
+                        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Position-X"></Label>
+                        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Position-Y"></Label>
+                        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Position-Z"></Label>
+                        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="4" Grid.Column="0" Content="Freeze Position"></Label>
+                        <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2"
+                          Header="Krew">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Grid.Row="0" Grid.Column="0" Content="Boss HP"></Label>
+                        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Clone Counter"></Label>
+                        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Position-X"></Label>
+                        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Position-Y"></Label>
+                        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="4" Grid.Column="0" Content="Position-Z"></Label>
+                        <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="5" Grid.Column="0" Content="Freeze Position"></Label>
+                        <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2"
+                          Header="Metal Kor">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Boss HP (Phase 1/2)"></Label>
+                        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Boss HP (Phase 3)"></Label>
+                        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Position-X"></Label>
+                        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Position-Y"></Label>
+                        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="4" Grid.Column="0" Content="Position-Z"></Label>
+                        <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
+
+                        <Label Grid.Row="5" Grid.Column="0" Content="Freeze Position"></Label>
+                        <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+
+        
 
         <GroupBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1"
                   Header="Camera Controls">
