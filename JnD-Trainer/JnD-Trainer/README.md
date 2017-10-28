@@ -7,16 +7,17 @@ GUI trainer for easier loading of levels, manipulation of addresses, etc.
 
 * addresses / controls planned on adding:
   * general info
-    * jaks position
-    * jaks speed
-    * camera position
-    * orb count
-    * skullgem count
+    * Jak status
+      * jaks position
+      * jaks speed
+      * hp
+      * eco
+      * last used gun
+      * ammo counts
+    * collectables
+      * orb count
+      * skullgem count
     * inventory information
-    * hp
-    * eco
-    * last used gun
-    * ammo counts
   * mission infomation
     * current objective counter
     * current mission timer
