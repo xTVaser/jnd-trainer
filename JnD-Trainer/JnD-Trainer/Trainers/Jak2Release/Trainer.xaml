@@ -6,11 +6,10 @@
         xmlns:local="clr-namespace:JnD_Trainer.Trainers.Jak2Release"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Trainer" Height="1000" Width="1000">
+        Title="Trainer" Height="900" Width="900" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.125*"/>
-            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
@@ -84,14 +83,15 @@
                   Header="General Information">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <GroupBox Grid.Row="0" Grid.Column="0" Header="Jak Status">
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -197,7 +197,7 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
-                            
+
                             <Image Grid.Column="0" Source="/JnD-Trainer;component/Assets/Jak2/scatter.png"></Image>
                             <TextBox Grid.Column="1"></TextBox>
                             <Image Grid.Column="2" Source="/JnD-Trainer;component/Assets/Jak2/blaster.png"></Image>
@@ -208,35 +208,21 @@
                             <TextBox Grid.Column="7"></TextBox>
                         </Grid>
 
-                    </Grid>
-                </GroupBox>
-
-                <GroupBox Grid.Row="0" Grid.Column="1" Header="Collectables">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        
-                        <Label Grid.Row="0"
+                        <Label Grid.Row="6"
                                Grid.Column="0"
                                Content="Orbs" 
                                VerticalAlignment="Center" 
                                HorizontalAlignment="Left" 
                                FontWeight="Bold"></Label>
-                        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+                        <TextBox Grid.Row="6" Grid.Column="1"></TextBox>
 
-                        <Label Grid.Row="1"
+                        <Label Grid.Row="7"
                                Grid.Column="0"
                                Content="Skull Gems" 
                                VerticalAlignment="Center" 
                                HorizontalAlignment="Left" 
                                FontWeight="Bold"></Label>
-                        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+                        <TextBox Grid.Row="7" Grid.Column="1"></TextBox>
                     </Grid>
                 </GroupBox>
 
@@ -551,7 +537,7 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+        <GroupBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1"
                   Header="Checkpoint and Level Controls">
             <Grid>
                 <Grid.RowDefinitions>
@@ -559,7 +545,6 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 
                 <Grid Grid.Row="0" Grid.Column="0">
@@ -568,14 +553,12 @@
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
                     
-                    <Label Grid.Row="0" Grid.Column="0" Content="Current Checkpoint"></Label>
-                    <ComboBox Grid.Row="0" Grid.Column="1">
-                        <!-- populate programmatically with list of checkpoints -->
-                    </ComboBox>
+                    
                 </Grid>
                 
                 <Grid Grid.Row="0" Grid.Column="1">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
@@ -588,47 +571,52 @@
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    
-                    <Label Content="Level Bank 1" Grid.Row="0" Grid.Column="0"></Label>
-                    <ComboBox Grid.Row="0" Grid.Column="1">
-                        <!-- populate programmatically with list of levels -->
-                    </ComboBox>
-                    <Label Content="Status" Grid.Row="0" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 2" Grid.Row="1" Grid.Column="0"></Label>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Current Checkpoint"></Label>
+                    <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                        <!-- populate programmatically with list of checkpoints -->
+                    </ComboBox>
+
+                    <Label Content="Level Bank 1" Grid.Row="1" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="1" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="1" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 3" Grid.Row="2" Grid.Column="0"></Label>
+                    <Label Content="Level Bank 2" Grid.Row="2" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="2" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="2" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 4" Grid.Row="3" Grid.Column="0"></Label>
+                    <Label Content="Level Bank 3" Grid.Row="3" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="3" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="3" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 5" Grid.Row="4" Grid.Column="0"></Label>
+                    <Label Content="Level Bank 4" Grid.Row="4" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="4" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="4" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 6" Grid.Row="5" Grid.Column="0"></Label>
+                    <Label Content="Level Bank 5" Grid.Row="5" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="5" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="5" Grid.Column="2"></Label>
+
+                    <Label Content="Level Bank 6" Grid.Row="6" Grid.Column="0"></Label>
+                    <ComboBox Grid.Row="6" Grid.Column="1">
+                        <!-- populate programmatically with list of levels -->
+                    </ComboBox>
+                    <Label Content="Status" Grid.Row="6" Grid.Column="2"></Label>
                 </Grid>
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1" Grid.RowSpan="2"
+        <GroupBox Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1" Grid.RowSpan="1"
                   Header="Debug Options">
             <ScrollViewer>
                 <Grid>
@@ -743,11 +731,17 @@
             </ScrollViewer>
         </GroupBox>
 
-        <GroupBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1"
+        <GroupBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1"
                   Header="Secrets and Miscellaneous Controls">
             <ScrollViewer>
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
@@ -817,90 +811,6 @@
                     <Label Grid.Row="16" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
                 </Grid>
             </ScrollViewer>
-        </GroupBox>
-
-        <GroupBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
-                  Header="Custom Fields">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.125*"/>
-                    <ColumnDefinition Width="0.45*"/>
-                    <ColumnDefinition Width="0.45*"/>
-                    <ColumnDefinition Width="0.125*"/>
-                    <ColumnDefinition Width="0.45*"/>
-                    <ColumnDefinition Width="0.45*"/>
-                </Grid.ColumnDefinitions>
-                
-                <Grid Grid.Row="0" Column="0" Grid.ColumnSpan="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Content="Freeze"></Label>
-                    <Label Grid.Column="1" Content="Address"></Label>
-                    <Label Grid.Column="2" Content="New Value"></Label>
-                </Grid>
-                
-                <CheckBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="2"></TextBox>
-
-                <CheckBox Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="2"></TextBox>
-
-                <CheckBox Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="2"></TextBox>
-
-                <CheckBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="2"></TextBox>
-
-                <CheckBox Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="5" Grid.Column="1"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="2"></TextBox>
-
-                <Grid Grid.Row="0" Column="3" Grid.ColumnSpan="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Content="Freeze"></Label>
-                    <Label Grid.Column="1" Content="Address"></Label>
-                    <Label Grid.Column="2" Content="New Value"></Label>
-                </Grid>
-
-                <CheckBox Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="1" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="5"></TextBox>
-
-                <CheckBox Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="2" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="5"></TextBox>
-
-                <CheckBox Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="3" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="5"></TextBox>
-
-                <CheckBox Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="4" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="5"></TextBox>
-
-                <CheckBox Grid.Row="5" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-                <TextBox Grid.Row="5" Grid.Column="4"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="5"></TextBox>
-            </Grid>
         </GroupBox>
     </Grid>
 </Window>
