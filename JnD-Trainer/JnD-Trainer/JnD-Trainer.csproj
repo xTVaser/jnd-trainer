@@ -141,5 +141,13 @@
     <Resource Include="Assets\Games\jakx.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\Jak2\peacemaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Jak2\blaster.png" />
+    <Resource Include="Assets\Jak2\scatter.png" />
+    <Resource Include="Assets\Jak2\vulcan.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

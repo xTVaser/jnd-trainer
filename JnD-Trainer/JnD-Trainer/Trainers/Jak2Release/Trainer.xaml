@@ -173,7 +173,7 @@
                                VerticalAlignment="Center" 
                                HorizontalAlignment="Left" 
                                FontWeight="Bold"></Label>
-                        <ComboBox Grid.Row="4" Grid.Column="1" SelectionChanged="ComboBox_SelectionChanged">
+                        <ComboBox Grid.Row="4" Grid.Column="1">
                             <ComboBoxItem Content="Scatter Gun"></ComboBoxItem>
                             <ComboBoxItem Content="Blaster Rifle"></ComboBoxItem>
                             <ComboBoxItem Content="Vulcan Fury"></ComboBoxItem>
@@ -371,6 +371,13 @@
 
                 <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="2" Text="Current Mission Timer" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
                 <TextBox Grid.Row="0" Grid.Column="3"></TextBox>
+
+                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="4" Text="Guard Status" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <ComboBox Grid.Row="0" Grid.Column="5">
+                    <ComboBoxItem Content="Neutral"></ComboBoxItem>
+                    <ComboBoxItem Content="Alerted"></ComboBoxItem>
+                    <ComboBoxItem Content="Aggressive"></ComboBoxItem>
+                </ComboBox>
 
                 <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                           Header="Praxis 1">
