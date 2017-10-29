@@ -7,16 +7,34 @@ GUI trainer for easier loading of levels, manipulation of addresses, etc.
 
 * addresses / controls planned on adding:
   * general info
-    * jaks position
-    * jaks speed
-    * camera position
-    * orb count
-    * skullgem count
+    * Jak status
+      * jaks position
+      * jaks speed
+      * hp
+      * eco
+      * last used gun
+      * ammo counts
+    * collectables
+      * orb count
+      * skullgem count
     * inventory information
-    * hp
-    * eco
-    * last used gun
-    * ammo counts
+      * Can Use Guns
+      * Blaster Rifle
+      * Scatter Gun
+      * Vulcan Fury
+      * Peacemaker
+      * Jetboard
+      * Daxter
+      * Dark Jak
+      * Scatter Gun Fire-Rate Upgrade
+      * Ammo Capacity Upgrade
+      * Weapon Damage Upgrade
+      * Red Barrier Clearence
+      * Green Barrier Clearence
+      * Yellow Barrier Clearence
+      * Dark Bomb
+      * Dark Blast
+      * Dark Invulnerability
   * mission infomation
     * current objective counter
     * current mission timer
