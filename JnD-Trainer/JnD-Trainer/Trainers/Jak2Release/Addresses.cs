@@ -10,7 +10,7 @@ namespace JnD_Trainer.Trainers.Jak2Release
     class Addresses {
 
         // TODO fill out file as needed
-        protected static readonly Address InfiniteJump = new Address(HexAddress: 0x0, ShouldFreeze: true, ShouldInspect: false);
+        protected static readonly Address InfiniteJump = new Address(HexAddress: 0x0, ShouldFreeze: true, ShouldSkip: false);
 
 
 

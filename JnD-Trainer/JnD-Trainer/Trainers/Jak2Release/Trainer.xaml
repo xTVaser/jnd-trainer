@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:JnD_Trainer.Trainers.Jak2Release"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Trainer" Height="900" Width="900" ResizeMode="NoResize">
+        Title="Trainer" Height="900" Width="900" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.125*"/>
@@ -56,7 +56,7 @@
                        VerticalAlignment="Center" 
                        HorizontalAlignment="Left" 
                        FontWeight="Bold"></Label>
-                <Label Grid.Row="1"
+                <Label x:Name="EmulatorStatus" Grid.Row="1"
                        Grid.Column="1"
                        Content="Connecting..." 
                        VerticalAlignment="Center" 
@@ -66,15 +66,18 @@
                 
                 <Button x:Name="returnToSplash"
                     Grid.Row="2"
-                    Grid.Column="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     Content="Return to Trainer Selection" Click="returnToSplash_Click"></Button>
                 <Button x:Name="exportValues"
                     Grid.Row="3"
-                    Grid.Column="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     Content="Export Current Values" Click="exportValues_Click"></Button>
                 <Button x:Name="importValues"
                     Grid.Row="4"
-                    Grid.Column="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
                     Content="Import Values" Click="importValues_Click"></Button>
             </Grid>
         </GroupBox>
@@ -199,7 +202,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Grid.Column="0" Source="/JnD-Trainer;component/Assets/Jak2/scatter.png"></Image>
-                            <TextBox Grid.Column="1"></TextBox>
+                            <TextBox x:Name="ScatterGunAmmo" Grid.Column="1"></TextBox>
                             <Image Grid.Column="2" Source="/JnD-Trainer;component/Assets/Jak2/blaster.png"></Image>
                             <TextBox Grid.Column="3"></TextBox>
                             <Image Grid.Column="4" Source="/JnD-Trainer;component/Assets/Jak2/vulcan.png"></Image>

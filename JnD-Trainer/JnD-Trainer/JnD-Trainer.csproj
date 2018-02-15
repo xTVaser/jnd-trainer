@@ -42,6 +42,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -79,6 +80,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="src\Address.cs" />
+    <Compile Include="src\Utilities.cs" />
     <Compile Include="Trainers\Jak2Release\Addresses.cs" />
     <Compile Include="Trainers\Jak2Release\Trainer.xaml.cs">
       <DependentUpon>Trainer.xaml</DependentUpon>

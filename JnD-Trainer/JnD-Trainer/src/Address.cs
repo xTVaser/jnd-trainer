@@ -11,12 +11,12 @@ namespace JnD_Trainer.src
     {
         public int HexAddress { get; }
         public bool ShouldFreeze { get; }
-        public bool ShouldInspect { get; }
+        public bool ShouldSkip { get; }
 
-        public Address(int HexAddress, bool ShouldFreeze, bool ShouldInspect) {
+        public Address(int HexAddress, bool ShouldFreeze, bool ShouldSkip) {
             this.HexAddress = HexAddress;
             this.ShouldFreeze = ShouldFreeze;
-            this.ShouldInspect = ShouldInspect;
+            this.ShouldSkip = ShouldSkip;
         }
     }
 }
