@@ -28,8 +28,8 @@ namespace JnD_Trainer.Trainers.Jak2Release
         private static MemorySharp memEdit = null;
 
         private bool connected;
-        public Trainer()
-        {
+
+        public Trainer() {
             InitializeComponent();
         }
 
@@ -70,19 +70,6 @@ namespace JnD_Trainer.Trainers.Jak2Release
                 new Address<float>(0x20622F1C, OrbCount),
                 new Address<float>(0x20622F14, SkullgemCount)
             };
-
-
-            //
-            //            IntPtr address = new IntPtr(0x20000000);
-            //
-            //            var bytes = sharp.Read<byte>(address, 16, isRelative: false);
-            //
-            //            for (int i = 0; i < bytes.Length; i++)
-            //            {
-            //                bytes[i]++;
-            //            }
-            //
-            //            sharp.Write<byte>(address, bytes, isRelative: false);
 
             Console.WriteLine("Ye");
         }
@@ -128,10 +115,8 @@ namespace JnD_Trainer.Trainers.Jak2Release
         }
 
 
-        private void returnToSplash_Click(object sender, RoutedEventArgs e)
-        {
+        private void returnToSplash_Click(object sender, RoutedEventArgs e) {
 
         }
-        
     }
 }
