@@ -51,27 +51,55 @@ namespace JnD_Trainer.Trainers.Jak2Release
             // -----
             // Init all Addresses with their respective component
             EditableAddresses = new List<Address> {
+                // ----
+                // General Information
+                // ----
                 // Position values are multipled by 4096 or 2^64
                 // And should be displayed to 4 digits precision
-                new Address<float>(0x20197790, JakPosX, transFunc: (val) => (val / 4096).ToString("0.0000")),
-                new Address<float>(0x20197794, JakPosY, transFunc: (val) => (val / 4096).ToString("0.0000")),
-                new Address<float>(0x20197798, JakPosZ, transFunc: (val) => (val / 4096).ToString("0.0000")),
+                new Address<float>(0x2019_7790, JakPosX, transFunc: (val) => (val / 4096).ToString("0.0000")),
+                new Address<float>(0x2019_7794, JakPosY, transFunc: (val) => (val / 4096).ToString("0.0000")),
+                new Address<float>(0x2019_7798, JakPosZ, transFunc: (val) => (val / 4096).ToString("0.0000")),
 
-                new Address<float>(0x2019C5C0, JakHP),
-                new Address<float>(0x20622F28, JakEco),
+                new Address<float>(0x2019_C5C0, JakHP),
+                new Address<float>(0x2062_2F28, JakEco),
                 // RAWB: TODO disabled tempoarily because combo box implemention is annoying atm
                 // new Address<int>  (0x20622F50, SelectedGun),
 
-                new Address<float>(0x20622F58, ScatterAmmo),
-                new Address<float>(0x20622F54, BlasterAmmo),
-                new Address<float>(0x20622F5C, VulcanAmmo),
-                new Address<float>(0x20622F60, PeacemakerAmmo),
+                new Address<float>(0x2062_2F58, ScatterAmmo),
+                new Address<float>(0x2062_2F54, BlasterAmmo),
+                new Address<float>(0x2062_2F5C, VulcanAmmo),
+                new Address<float>(0x2062_2F60, PeacemakerAmmo),
 
-                new Address<float>(0x20622F1C, OrbCount),
-                new Address<float>(0x20622F14, SkullgemCount)
+                new Address<float>(0x2062_2F1C, OrbCount),
+                new Address<float>(0x2062_2F14, SkullgemCount),
+
+                // ----
+                // Inventory
+                // ----
+                new Address<byte>(0x2062_2F30, InventoryGuns,    expectedTruthyValue: 1, bitMask: 0b0010_0000),
+                new Address<byte>(0x2062_2F30, InventoryBlaster, expectedTruthyValue: 1, bitMask: 0b0100_0000),
+                new Address<byte>(0x2062_2F30, InventoryScatter, expectedTruthyValue: 1, bitMask: 0b1000_0000),
+
+                new Address<byte>(0x2062_2F31, InventoryVulcan, expectedTruthyValue: 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F31, InventoryPeacemaker, expectedTruthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_2F31, InventoryJetboard, expectedTruthyValue: 1, bitMask: 0b0000_0100),
+                new Address<byte>(0x2062_2F31, InventoryDaxter, expectedTruthyValue: 1, bitMask: 0b0001_0000),
+                new Address<byte>(0x2062_2F31, InventoryDarkJak, expectedTruthyValue: 1, bitMask: 0b0010_0000),
+                new Address<byte>(0x2062_2F31, InventoryScatterUpgrade, expectedTruthyValue: 1, bitMask: 0b0100_0000),
+                new Address<byte>(0x2062_2F31, InventoryAmmoUpgrade, expectedTruthyValue: 1, bitMask: 0b1000_0000),
+
+                new Address<byte>(0x2062_2F32, InventoryDamageUpgrade, expectedTruthyValue: 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F32, InventoryRedBarrier, expectedTruthyValue: 1, bitMask: 0b0000_0100),
+                new Address<byte>(0x2062_2F32, InventoryGreenBarrier, expectedTruthyValue: 1, bitMask: 0b0000_1000),
+                new Address<byte>(0x2062_2F32, InventoryYellowBarrier, expectedTruthyValue: 1, bitMask: 0b0001_0000),
+                new Address<byte>(0x2062_2F32, InventoryDarkBomb, expectedTruthyValue: 1, bitMask: 0b0100_0000),
+                new Address<byte>(0x2062_2F32, InventoryDarkBlast, expectedTruthyValue: 1, bitMask: 0b1000_0000),
+
+                new Address<byte>(0x2062_2F33, InventoryDarkInvul, expectedTruthyValue: 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F33, InventoryDarkGiant, expectedTruthyValue: 1, bitMask: 0b0000_0010),
+
+
             };
-
-            Console.WriteLine("Ye");
         }
 
 

@@ -251,6 +251,7 @@
                                 <RowDefinition Height="1*"/>
                                 <RowDefinition Height="1*"/>
                                 <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="4*"/>
@@ -258,55 +259,58 @@
                             </Grid.ColumnDefinitions>
 
                             <Label Grid.Row="0" Grid.Column="0" Content="Can Use Guns"></Label>
-                            <CheckBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryGuns" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="1" Grid.Column="0" Content="Blaster Rifle"></Label>
-                            <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryBlaster" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="2" Grid.Column="0" Content="Scatter Gun"></Label>
-                            <CheckBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryScatter" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="3" Grid.Column="0" Content="Vulcan Fury"></Label>
-                            <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryVulcan" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="4" Grid.Column="0" Content="Peacemaker"></Label>
-                            <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryPeacemaker" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="5" Grid.Column="0" Content="Jetboard"></Label>
-                            <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryJetboard" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="6" Grid.Column="0" Content="Daxter"></Label>
-                            <CheckBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryDaxter" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="7" Grid.Column="0" Content="Dark Jak"></Label>
-                            <CheckBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryDarkJak" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="8" Grid.Column="0" Content="Scatter Gun Fire-Rate Upgrade"></Label>
-                            <CheckBox Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryScatterUpgrade" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="9" Grid.Column="0" Content="Ammo Capacity Upgrade"></Label>
-                            <CheckBox Grid.Row="9" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryAmmoUpgrade" Grid.Row="9" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="10" Grid.Column="0" Content="Weapon Damage Upgrade"></Label>
-                            <CheckBox Grid.Row="10" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryDamageUpgrade" Grid.Row="10" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="11" Grid.Column="0" Content="Red Barrier Clearence"></Label>
-                            <CheckBox Grid.Row="11" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryRedBarrier" Grid.Row="11" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="12" Grid.Column="0" Content="Green Barrier Clearence"></Label>
-                            <CheckBox Grid.Row="12" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryGreenBarrier" Grid.Row="12" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="13" Grid.Column="0" Content="Yellow Barrier Clearence"></Label>
-                            <CheckBox Grid.Row="13" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryYellowBarrier" Grid.Row="13" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="14" Grid.Column="0" Content="Dark Bomb"></Label>
-                            <CheckBox Grid.Row="14" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryDarkBomb" Grid.Row="14" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="15" Grid.Column="0" Content="Dark Blast"></Label>
-                            <CheckBox Grid.Row="15" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryDarkBlast" Grid.Row="15" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                             <Label Grid.Row="16" Grid.Column="0" Content="Dark Invulnerability"></Label>
-                            <CheckBox Grid.Row="16" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                            <CheckBox x:Name="InventoryDarkInvul" Grid.Row="16" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+
+                            <Label Grid.Row="17" Grid.Column="0" Content="Dark Giant"></Label>
+                            <CheckBox x:Name="InventoryDarkGiant" Grid.Row="17" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                         </Grid>
                     </ScrollViewer>

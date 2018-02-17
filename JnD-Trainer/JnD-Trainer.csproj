@@ -80,9 +80,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="src\Address.cs" />
-    <Compile Include="src\UIComponent.cs" />
     <Compile Include="src\Utilities.cs" />
-    <Compile Include="Trainers\Jak2Release\Addresses.cs" />
     <Compile Include="Trainers\Jak2Release\Trainer.xaml.cs">
       <DependentUpon>Trainer.xaml</DependentUpon>
     </Compile>
