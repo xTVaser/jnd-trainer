@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Binarysharp.MemoryManagement;
 using System.Windows.Threading;
+using JnD_Trainer.src;
 
 namespace JnD_Trainer.Trainers.Jak2Release
 {
@@ -32,6 +33,10 @@ namespace JnD_Trainer.Trainers.Jak2Release
             InitializeComponent();
         }
 
+        // TODO PAL conversion
+        protected static List<Address> EditableAddresses;
+
+
         private void Window_Loaded(object sender, RoutedEventArgs e) {
 
             retryEmuConnection.Tick += new EventHandler(ConnectToPcsx2);
@@ -41,6 +46,30 @@ namespace JnD_Trainer.Trainers.Jak2Release
             updateTrainer.Tick += new EventHandler(trainerFrame);
             updateTrainer.Interval = TimeSpan.FromMilliseconds(50); // every 50 milliseconds 
             updateTrainer.Start();
+            
+
+            // -----
+            // Init all Addresses with their respective component
+            EditableAddresses = new List<Address> {
+                // Position values are multipled by 4096 or 2^64
+                // And should be displayed to 4 digits precision
+                new Address<float>(0x20197790, JakPosX, transFunc: (val) => (val / 4096).ToString("0.0000")),
+                new Address<float>(0x20197794, JakPosY, transFunc: (val) => (val / 4096).ToString("0.0000")),
+                new Address<float>(0x20197798, JakPosZ, transFunc: (val) => (val / 4096).ToString("0.0000")),
+
+                new Address<float>(0x2019C5C0, JakHP),
+                new Address<float>(0x20622F28, JakEco),
+                // RAWB: TODO disabled tempoarily because combo box implemention is annoying atm
+                // new Address<int>  (0x20622F50, SelectedGun),
+
+                new Address<float>(0x20622F58, ScatterAmmo),
+                new Address<float>(0x20622F54, BlasterAmmo),
+                new Address<float>(0x20622F5C, VulcanAmmo),
+                new Address<float>(0x20622F60, PeacemakerAmmo),
+
+                new Address<float>(0x20622F1C, OrbCount),
+                new Address<float>(0x20622F14, SkullgemCount)
+            };
 
 
             //
@@ -84,12 +113,18 @@ namespace JnD_Trainer.Trainers.Jak2Release
 
         private void trainerFrame(Object o, EventArgs args) {
 
+            // If we havn't connected to PCSX2 yet, then don't do anything
+            // TODO if disconnected, then restart the connect to pcsx2 timer
             if (memEdit == null || emuProcess == null || emuProcess.HasExited) {
                 return;
             }
 
-            float val = memEdit.Read<float>(new IntPtr(0x20622F58), isRelative: false);
-            ScatterGunAmmo.Text = val.ToString();
+            // Loop through all addresses and update their values
+            foreach (Address addr in EditableAddresses) {
+                addr.UpdateUIElement(memEdit);
+            }
+
+            // RAWB: TODO update lateral and vertical speed
         }
 
 
@@ -97,16 +132,6 @@ namespace JnD_Trainer.Trainers.Jak2Release
         {
 
         }
-
-        private void exportValues_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void importValues_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
     }
 }

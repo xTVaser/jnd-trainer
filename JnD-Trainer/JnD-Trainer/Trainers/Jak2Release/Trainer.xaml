@@ -69,16 +69,17 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Content="Return to Trainer Selection" Click="returnToSplash_Click"></Button>
-                <Button x:Name="exportValues"
+                <!-- TODO might remove these -->
+                <Button x:Name="screenshotTrainer"
                     Grid.Row="3"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Content="Export Current Values" Click="exportValues_Click"></Button>
-                <Button x:Name="importValues"
+                    Content="Screenshot Trainer"/>
+                <Button x:Name="screenshotGame"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Content="Import Values" Click="importValues_Click"></Button>
+                    Content="Screenshot Game"/>
             </Grid>
         </GroupBox>
 
@@ -121,15 +122,15 @@
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0">
                                 <Label Content="X-Pos" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,-2"></Label>
-                                <TextBox></TextBox>
+                                <TextBox x:Name="JakPosX"></TextBox>
                             </StackPanel>
                             <StackPanel Grid.Column="1">
                                 <Label Content="Y-Pos" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,-2"></Label>
-                                <TextBox></TextBox>
+                                <TextBox x:Name="JakPosY"></TextBox>
                             </StackPanel>
                             <StackPanel Grid.Column="2">
                                 <Label Content="Z-Pos" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,-2"></Label>
-                                <TextBox></TextBox>
+                                <TextBox x:Name="JakPosZ"></TextBox>
                             </StackPanel>
                         </Grid>
 
@@ -145,12 +146,12 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0">
-                                <Label Content="X Delta" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,-2"></Label>
-                                <Label Content="Fast" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,0"></Label>
+                                <Label Content="X-Z Delta" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,-2"></Label>
+                                <Label x:Name="JakLateralSpeed" Content="---" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,0"></Label>
                             </StackPanel>
                             <StackPanel Grid.Column="1">
                                 <Label Content="Y Delta" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,-2"></Label>
-                                <Label Content="Fast" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,0"></Label>
+                                <Label x:Name="JakVerticalSpeed" Content="---" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-5,0,0"></Label>
                             </StackPanel>
                         </Grid>
 
@@ -160,7 +161,7 @@
                                VerticalAlignment="Center" 
                                HorizontalAlignment="Left" 
                                FontWeight="Bold"></Label>
-                        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="JakHP" Grid.Row="2" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="3"
                                Grid.Column="0"
@@ -168,7 +169,7 @@
                                VerticalAlignment="Center" 
                                HorizontalAlignment="Left" 
                                FontWeight="Bold"></Label>
-                        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="JakEco" Grid.Row="3" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="4"
                                Grid.Column="0"
@@ -176,7 +177,7 @@
                                VerticalAlignment="Center" 
                                HorizontalAlignment="Left" 
                                FontWeight="Bold"></Label>
-                        <ComboBox Grid.Row="4" Grid.Column="1">
+                        <ComboBox x:Name="SelectedGun" Grid.Row="4" Grid.Column="1">
                             <ComboBoxItem Content="Scatter Gun"></ComboBoxItem>
                             <ComboBoxItem Content="Blaster Rifle"></ComboBoxItem>
                             <ComboBoxItem Content="Vulcan Fury"></ComboBoxItem>
@@ -202,13 +203,13 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Grid.Column="0" Source="/JnD-Trainer;component/Assets/Jak2/scatter.png"></Image>
-                            <TextBox x:Name="ScatterGunAmmo" Grid.Column="1"></TextBox>
+                            <TextBox x:Name="ScatterAmmo" Grid.Column="1"></TextBox>
                             <Image Grid.Column="2" Source="/JnD-Trainer;component/Assets/Jak2/blaster.png"></Image>
-                            <TextBox Grid.Column="3"></TextBox>
+                            <TextBox x:Name="BlasterAmmo" Grid.Column="3"></TextBox>
                             <Image Grid.Column="4" Source="/JnD-Trainer;component/Assets/Jak2/vulcan.png"></Image>
-                            <TextBox Grid.Column="5"></TextBox>
+                            <TextBox x:Name="VulcanAmmo" Grid.Column="5"></TextBox>
                             <Image Grid.Column="6" Source="/JnD-Trainer;component/Assets/Jak2/peacemaker.png"></Image>
-                            <TextBox Grid.Column="7"></TextBox>
+                            <TextBox x:Name="PeacemakerAmmo" Grid.Column="7"></TextBox>
                         </Grid>
 
                         <Label Grid.Row="6"
@@ -217,7 +218,7 @@
                                VerticalAlignment="Center" 
                                HorizontalAlignment="Left" 
                                FontWeight="Bold"></Label>
-                        <TextBox Grid.Row="6" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="OrbCount" Grid.Row="6" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="7"
                                Grid.Column="0"
@@ -225,7 +226,7 @@
                                VerticalAlignment="Center" 
                                HorizontalAlignment="Left" 
                                FontWeight="Bold"></Label>
-                        <TextBox Grid.Row="7" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="SkullgemCount" Grid.Row="7" Grid.Column="1"></TextBox>
                     </Grid>
                 </GroupBox>
 
@@ -580,37 +581,37 @@
                         <!-- populate programmatically with list of checkpoints -->
                     </ComboBox>
 
-                    <Label Content="Level Bank 1" Grid.Row="1" Grid.Column="0"></Label>
+                    <Label Content="Level 1" Grid.Row="1" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="1" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="1" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 2" Grid.Row="2" Grid.Column="0"></Label>
+                    <Label Content="Level 2" Grid.Row="2" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="2" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="2" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 3" Grid.Row="3" Grid.Column="0"></Label>
+                    <Label Content="Level 3" Grid.Row="3" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="3" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="3" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 4" Grid.Row="4" Grid.Column="0"></Label>
+                    <Label Content="Level 4" Grid.Row="4" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="4" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="4" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 5" Grid.Row="5" Grid.Column="0"></Label>
+                    <Label Content="Level 5" Grid.Row="5" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="5" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
                     <Label Content="Status" Grid.Row="5" Grid.Column="2"></Label>
 
-                    <Label Content="Level Bank 6" Grid.Row="6" Grid.Column="0"></Label>
+                    <Label Content="Level 6" Grid.Row="6" Grid.Column="0"></Label>
                     <ComboBox Grid.Row="6" Grid.Column="1">
                         <!-- populate programmatically with list of levels -->
                     </ComboBox>
