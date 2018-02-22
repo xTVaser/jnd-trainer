@@ -31,12 +31,12 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Label Grid.Row="0"
                        Grid.Column="0"
                        Content="Author" 
@@ -63,23 +63,31 @@
                        HorizontalAlignment="Center" 
                        FontWeight="Bold"
                        Foreground="Red"></Label>
-                
+
+                <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Text="Address&#xD;&#xA;Credit" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left" 
+                       FontWeight="Bold"></TextBlock>
+                <TextBlock Grid.Row="2"
+                       Grid.Column="1"
+                       Text="xTVaser, Blahpy, Kuitar, Bobbykaze, Thatawesomecat, Luminar, and many more"
+                       TextWrapping="Wrap"    
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" FontSize="10"></TextBlock>
+
                 <Button x:Name="returnToSplash"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Content="Return to Trainer Selection" Click="returnToSplash_Click"></Button>
                 <!-- TODO might remove these -->
                 <Button x:Name="screenshotTrainer"
-                    Grid.Row="3"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Content="Screenshot Trainer"/>
-                <Button x:Name="screenshotGame"
                     Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
-                    Content="Screenshot Game"/>
+                    Content="Screenshot Trainer"/>
             </Grid>
         </GroupBox>
 
@@ -325,6 +333,7 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
@@ -332,13 +341,17 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0" Content="Infinite Jump"></Label>
-                <CheckBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                <CheckBox x:Name="InfiniteJump" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                <Label Grid.Row="1" Grid.Column="0" Content="Freeze Jak's Position"></Label>
-                <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                <Label Grid.Row="1" Grid.Column="0" Content="Freeze Jak's X-Position"></Label>
+                <CheckBox x:Name="FreezeJakXPosition" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                <Label Grid.Row="2" Grid.Column="0" Content="Jetboard Sideflip Stored"></Label>
-                <CheckBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                <Label Grid.Row="2" Grid.Column="0" Content="Freeze Jak's Y-Position"></Label>
+                <CheckBox x:Name="FreezeJakYPosition" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Freeze Jak's Z-Position"></Label>
+                <CheckBox x:Name="FreezeJakZPosition" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+
             </Grid>
         </GroupBox>
 
@@ -360,14 +373,17 @@
                     <ColumnDefinition Width="0.25*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="0" Text="Current Mission Counter" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
-                <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="0" Text="Current Objective Counter" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBox x:Name="CurrentObjectiveCounter" Grid.Row="0" Grid.Column="1"></TextBox>
 
-                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="2" Text="Current Mission Timer" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
-                <TextBox Grid.Row="0" Grid.Column="3"></TextBox>
+                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="2" Text="Current Objective Timer" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBox x:Name="CurrentObjectiveTimer" Grid.Row="0" Grid.Column="3"></TextBox>
 
-                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="4" Text="Guard Status" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
-                <ComboBox Grid.Row="0" Grid.Column="5">
+                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="4" Text="Current Objective Score" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBox x:Name="CurrentObjectiveScore" Grid.Row="0" Grid.Column="5"></TextBox>
+
+                <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" Grid.Column="6" Text="Guard Status" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <ComboBox x:Name="CityAlertStatus" Grid.Row="0" Grid.Column="7">
                     <ComboBoxItem Content="Neutral"></ComboBoxItem>
                     <ComboBoxItem Content="Alerted"></ComboBoxItem>
                     <ComboBoxItem Content="Aggressive"></ComboBoxItem>
@@ -389,19 +405,19 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Row="0" Grid.Column="0" Content="Boss HP (Not Found Yet)"></Label>
-                        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Praxis1HP" Grid.Row="0" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="1" Grid.Column="0" Content="Position-X"></Label>
-                        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Praxis1PositionX" Grid.Row="1" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="2" Grid.Column="0" Content="Position-Y"></Label>
-                        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Praxis1PositionY" Grid.Row="2" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="3" Grid.Column="0" Content="Position-Z"></Label>
-                        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Praxis1PositionZ" Grid.Row="3" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="4" Grid.Column="0" Content="Freeze Position"></Label>
-                        <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                        <CheckBox x:Name="Praxis1FreezePosition" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
                     </Grid>
                 </GroupBox>
 
@@ -409,11 +425,11 @@
                           Header="Praxis 2">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="37*"/>
+                            <RowDefinition Height="36"/>
+                            <RowDefinition Height="37*"/>
+                            <RowDefinition Height="36*"/>
+                            <RowDefinition Height="37*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="4*"/>
@@ -421,19 +437,19 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Row="0" Grid.Column="0" Content="Bomb Hits"></Label>
-                        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Praxis2BombHits" Grid.Row="0" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="1" Grid.Column="0" Content="Position-X"></Label>
-                        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Praxis2PositionX" Grid.Row="1" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="2" Grid.Column="0" Content="Position-Y"></Label>
-                        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Praxis2PositionY" Grid.Row="2" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="3" Grid.Column="0" Content="Position-Z"></Label>
-                        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Praxis2PositionZ" Grid.Row="3" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="4" Grid.Column="0" Content="Freeze Position"></Label>
-                        <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                        <CheckBox x:Name="Praxis2FreezePosition" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
                     </Grid>
                 </GroupBox>
 
@@ -452,24 +468,24 @@
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <Label Grid.Row="0" Grid.Column="0" Content="Boss HP"></Label>
-                        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KrewHP" Grid.Row="0" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="1" Grid.Column="0" Content="Clone Counter"></Label>
-                        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KrewCloneCounter" Grid.Row="1" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="2" Grid.Column="0" Content="Position-X"></Label>
-                        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KrewPositionX" Grid.Row="2" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="3" Grid.Column="0" Content="Position-Y"></Label>
-                        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KrewPositionY" Grid.Row="3" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="4" Grid.Column="0" Content="Position-Z"></Label>
-                        <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KrewPositionZ" Grid.Row="4" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="5" Grid.Column="0" Content="Freeze Position"></Label>
-                        <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                        <CheckBox x:Name="KrewFreezePosition" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
                     </Grid>
                 </GroupBox>
 
@@ -490,33 +506,34 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Row="0" Grid.Column="0" Content="Boss HP (Phase 1/2)"></Label>
-                        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KorPhase1And2HP" Grid.Row="0" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="1" Grid.Column="0" Content="Boss HP (Phase 3)"></Label>
-                        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KorPhase3HP" Grid.Row="1" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="2" Grid.Column="0" Content="Position-X"></Label>
-                        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KorPositionX" Grid.Row="2" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="3" Grid.Column="0" Content="Position-Y"></Label>
-                        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KorPositionY" Grid.Row="3" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="4" Grid.Column="0" Content="Position-Z"></Label>
-                        <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="KorPositionZ" Grid.Row="4" Grid.Column="1"></TextBox>
 
                         <Label Grid.Row="5" Grid.Column="0" Content="Freeze Position"></Label>
-                        <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                        <CheckBox x:Name="KorFreezePosition" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
                     </Grid>
                 </GroupBox>
             </Grid>
         </GroupBox>
 
-        
+
 
         <GroupBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1"
                   Header="Camera Controls">
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
@@ -540,8 +557,11 @@
                 <Label Grid.Row="3" Grid.Column="0" Content="Free Camera"></Label>
                 <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                <Label Grid.Row="4" Grid.Column="0" Content="FOV Control"></Label>
-                <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
+                <Label Grid.Row="4" Grid.Column="0" Content="Freeze Camera"></Label>
+                <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+
+                <Label Grid.Row="5" Grid.Column="0" Content="FOV Control"></Label>
+                <TextBox x:Name="FOVControl" Grid.Row="5" Grid.Column="1"></TextBox>
             </Grid>
         </GroupBox>
 
@@ -554,16 +574,16 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Grid Grid.Row="0" Grid.Column="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    
-                    
+
+
                 </Grid>
-                
+
                 <Grid Grid.Row="0" Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
@@ -580,7 +600,7 @@
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0" Content="Current Checkpoint"></Label>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Checkpoint" TextWrapping="Wrap"/>
                     <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
                         <!-- populate programmatically with list of checkpoints -->
                     </ComboBox>
@@ -661,79 +681,46 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0" Content="Bug Report"></Label>
-                    <CheckBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugBugReport" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="1" Grid.Column="0" Content="Loading Profiler"></Label>
-                    <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugProfiler" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="2" Grid.Column="0" Content="Minimap Flashing"></Label>
-                    <CheckBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugMinimapFlashing" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="3" Grid.Column="0" Content="Leaf-Index"></Label>
-                    <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugLeafIndex" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="4" Grid.Column="0" Content="Level Buffer"></Label>
-                    <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugLevelBuffer" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="5" Grid.Column="0" Content="Level Info"></Label>
-                    <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugLevelInfo" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="6" Grid.Column="0" Content="2D/3D Info"></Label>
-                    <CheckBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="Debug2D3DInfo" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="7" Grid.Column="0" Content="Effects of Rendering Level"></Label>
-                    <CheckBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugRenderingEffects" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="8" Grid.Column="0" Content="CW/CCW/STRDL"></Label>
-                    <CheckBox Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugCwCcwStrdl" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="9" Grid.Column="0" Content="Camera Position"></Label>
-                    <CheckBox Grid.Row="9" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugCameraPosition" Grid.Row="9" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="10" Grid.Column="0" Content="Animation Channels"></Label>
-                    <CheckBox Grid.Row="10" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugAnimationChannels" Grid.Row="10" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="11" Grid.Column="0" Content="Empty Channels"></Label>
-                    <CheckBox Grid.Row="11" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="12" Grid.Column="0" Content="Fire Gun"></Label>
-                    <CheckBox Grid.Row="12" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="13" Grid.Column="0" Content="Put Gun Away"></Label>
-                    <CheckBox Grid.Row="13" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="14" Grid.Column="0" Content="Take out Jetboard"></Label>
-                    <CheckBox Grid.Row="14" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="15" Grid.Column="0" Content="Camera Manipulation 1"></Label>
-                    <CheckBox Grid.Row="15" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="16" Grid.Column="0" Content="Camera Manipulation 2"></Label>
-                    <CheckBox Grid.Row="16" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="17" Grid.Column="0" Content="Camera Manipulation 3"></Label>
-                    <CheckBox Grid.Row="17" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="18" Grid.Column="0" Content="Camera Manipulation 4"></Label>
-                    <CheckBox Grid.Row="18" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="19" Grid.Column="0" Content="Camera Manipulation 5"></Label>
-                    <CheckBox Grid.Row="19" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="20" Grid.Column="0" Content="Screen Artifacts"></Label>
-                    <CheckBox Grid.Row="20" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="21" Grid.Column="0" Content="Black Screen"></Label>
-                    <CheckBox Grid.Row="21" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugEmptyChannels" Grid.Row="11" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="22" Grid.Column="0" Content="Stop Rendering Walls"></Label>
-                    <CheckBox Grid.Row="23" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugStopRenderWalls" Grid.Row="23" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="24" Grid.Column="0" Content="Invert Horizontal Camera"></Label>
-                    <CheckBox Grid.Row="24" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="25" Grid.Column="0" Content="Prevent Other Level Loading"></Label>
-                    <CheckBox Grid.Row="25" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="DebugInvertCamera" Grid.Row="24" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                 </Grid>
             </ScrollViewer>
@@ -760,7 +747,6 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="4*"/>
@@ -768,55 +754,33 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0" Content="Toggle Goatee"></Label>
-                    <CheckBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="SecretToggleGoatee" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="1" Grid.Column="0" Content="Mirror World"></Label>
-                    <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="SecretMirrorWorld" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="2" Grid.Column="0" Content="Unlimited Ammo"></Label>
-                    <CheckBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="SecretUnlimitedAmmo" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="3" Grid.Column="0" Content="Invulnerability"></Label>
-                    <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="SecretInvulnerability" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                     <Label Grid.Row="4" Grid.Column="0" Content="Unlimited Dark Jak"></Label>
-                    <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <CheckBox x:Name="SecretUnlimitedDarkJak" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                    <Label Grid.Row="5" Grid.Column="0" Content="Hero Mode Active(?)"></Label>
-                    <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <Label Grid.Row="5" Grid.Column="0" Content="Big Head Mode"></Label>
+                    <CheckBox x:Name="SecretBigHeadMode" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                    <Label Grid.Row="6" Grid.Column="0" Content="Big Head Mode"></Label>
-                    <CheckBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <Label Grid.Row="6" Grid.Column="0" Content="Small Head Mode"></Label>
+                    <CheckBox x:Name="SecretSmallHeadMode" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                    <Label Grid.Row="7" Grid.Column="0" Content="Small Heade Mode"></Label>
-                    <CheckBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <!-- Add lighting options here -->
 
-                    <Label Grid.Row="8" Grid.Column="0" Content="Ground Alpha"></Label>
-                    <CheckBox Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <Label Grid.Row="7" Grid.Column="0" Content="Total Number of Attacks"></Label>
+                    <Label x:Name="StatsNumberOfAttacks" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
 
-                    <Label Grid.Row="9" Grid.Column="0" Content="Red Ambient Light"></Label>
-                    <TextBox Grid.Row="9" Grid.Column="1"></TextBox>
-
-                    <Label Grid.Row="10" Grid.Column="0" Content="Green Ambient Light"></Label>
-                    <TextBox Grid.Row="10" Grid.Column="1"></TextBox>
-
-                    <Label Grid.Row="11" Grid.Column="0" Content="Blue Ambient Light"></Label>
-                    <TextBox Grid.Row="11" Grid.Column="1"></TextBox>
-
-                    <Label Grid.Row="12" Grid.Column="0" Content="Red Light Intensity"></Label>
-                    <TextBox Grid.Row="12" Grid.Column="1"></TextBox>
-
-                    <Label Grid.Row="13" Grid.Column="0" Content="Green Light Intensity"></Label>
-                    <TextBox Grid.Row="13" Grid.Column="1"></TextBox>
-
-                    <Label Grid.Row="14" Grid.Column="0" Content="Blue Light Intensity"></Label>
-                    <TextBox Grid.Row="14" Grid.Column="1"></TextBox>
-
-                    <Label Grid.Row="15" Grid.Column="0" Content="Total Number of Attacks"></Label>
-                    <Label Grid.Row="15" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-
-                    <Label Grid.Row="16" Grid.Column="0" Content="Total Dark Eco Collected"></Label>
-                    <Label Grid.Row="16" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                    <Label Grid.Row="8" Grid.Column="0" Content="Total Dark Eco Collected"></Label>
+                    <Label x:Name="StatsNumberOfEcoCollected" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
                 </Grid>
             </ScrollViewer>
         </GroupBox>

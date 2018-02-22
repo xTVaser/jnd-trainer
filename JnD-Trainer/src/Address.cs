@@ -15,17 +15,19 @@ namespace JnD_Trainer {
     public class Address<T> : Address {
         public int HexAddress { get; }
         public Control UiElement { get; }
-        public T ExpectedTruthyValue { get; }
+        public T TruthyValue { get; }
+        public T ToggleValue { get; }
         public byte BitMask { get; }
         public bool ShouldEdit { get; }
         public bool ShouldFreeze { get; }
         private readonly Func<T, string> _transFunc; // FUNCTIONAL! (ithink)
 
-        public Address(int hexAddress, Control uiElement, T expectedTruthyValue = default(T), byte bitMask = 0b0,
+        public Address(int hexAddress, Control uiElement, T truthyValue = default(T), T toggleValue = default(T), byte bitMask = 0b0,
             Func<T, string> transFunc = null, bool shouldEdit = true, bool shouldFreeze = false) {
             this.HexAddress = hexAddress;
             this.UiElement = uiElement;
-            this.ExpectedTruthyValue = expectedTruthyValue;
+            this.TruthyValue = truthyValue;
+            this.ToggleValue = toggleValue;
             this.BitMask = bitMask;
             this._transFunc = transFunc;
             this.ShouldEdit = shouldEdit;
@@ -50,7 +52,7 @@ namespace JnD_Trainer {
             }
             else if (UiElement.GetType() == typeof(CheckBox)) {
                 // We need to look at a specific bit in the byte response
-                if (Type == typeof(byte)) {
+                if (Type == typeof(byte) && BitMask != 0b0) {
                     var mask = (Convert.ToInt32(val) & BitMask);
                     ((CheckBox)UiElement).IsChecked = mask == BitMask;
                     //((CheckBox) UiElement).IsChecked = ((Convert.ToInt32(val) & BitMask) == 1);

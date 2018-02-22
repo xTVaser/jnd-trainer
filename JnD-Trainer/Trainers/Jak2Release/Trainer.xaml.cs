@@ -76,30 +76,88 @@ namespace JnD_Trainer.Trainers.Jak2Release
                 // ----
                 // Inventory
                 // ----
-                new Address<byte>(0x2062_2F30, InventoryGuns,    expectedTruthyValue: 1, bitMask: 0b0010_0000),
-                new Address<byte>(0x2062_2F30, InventoryBlaster, expectedTruthyValue: 1, bitMask: 0b0100_0000),
-                new Address<byte>(0x2062_2F30, InventoryScatter, expectedTruthyValue: 1, bitMask: 0b1000_0000),
+                new Address<byte>(0x2062_2F30, InventoryGuns,    truthyValue: 1, bitMask: 0b0010_0000),
+                new Address<byte>(0x2062_2F30, InventoryBlaster, truthyValue: 1, bitMask: 0b0100_0000),
+                new Address<byte>(0x2062_2F30, InventoryScatter, truthyValue: 1, bitMask: 0b1000_0000),
 
-                new Address<byte>(0x2062_2F31, InventoryVulcan, expectedTruthyValue: 1, bitMask: 0b0000_0001),
-                new Address<byte>(0x2062_2F31, InventoryPeacemaker, expectedTruthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2062_2F31, InventoryJetboard, expectedTruthyValue: 1, bitMask: 0b0000_0100),
-                new Address<byte>(0x2062_2F31, InventoryDaxter, expectedTruthyValue: 1, bitMask: 0b0001_0000),
-                new Address<byte>(0x2062_2F31, InventoryDarkJak, expectedTruthyValue: 1, bitMask: 0b0010_0000),
-                new Address<byte>(0x2062_2F31, InventoryScatterUpgrade, expectedTruthyValue: 1, bitMask: 0b0100_0000),
-                new Address<byte>(0x2062_2F31, InventoryAmmoUpgrade, expectedTruthyValue: 1, bitMask: 0b1000_0000),
+                new Address<byte>(0x2062_2F31, InventoryVulcan, truthyValue: 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F31, InventoryPeacemaker, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_2F31, InventoryJetboard, truthyValue: 1, bitMask: 0b0000_0100),
+                new Address<byte>(0x2062_2F31, InventoryDaxter, truthyValue: 1, bitMask: 0b0001_0000),
+                new Address<byte>(0x2062_2F31, InventoryDarkJak, truthyValue: 1, bitMask: 0b0010_0000),
+                new Address<byte>(0x2062_2F31, InventoryScatterUpgrade, truthyValue: 1, bitMask: 0b0100_0000),
+                new Address<byte>(0x2062_2F31, InventoryAmmoUpgrade, truthyValue: 1, bitMask: 0b1000_0000),
 
-                new Address<byte>(0x2062_2F32, InventoryDamageUpgrade, expectedTruthyValue: 1, bitMask: 0b0000_0001),
-                new Address<byte>(0x2062_2F32, InventoryRedBarrier, expectedTruthyValue: 1, bitMask: 0b0000_0100),
-                new Address<byte>(0x2062_2F32, InventoryGreenBarrier, expectedTruthyValue: 1, bitMask: 0b0000_1000),
-                new Address<byte>(0x2062_2F32, InventoryYellowBarrier, expectedTruthyValue: 1, bitMask: 0b0001_0000),
-                new Address<byte>(0x2062_2F32, InventoryDarkBomb, expectedTruthyValue: 1, bitMask: 0b0100_0000),
-                new Address<byte>(0x2062_2F32, InventoryDarkBlast, expectedTruthyValue: 1, bitMask: 0b1000_0000),
+                new Address<byte>(0x2062_2F32, InventoryDamageUpgrade, truthyValue: 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F32, InventoryRedBarrier, truthyValue: 1, bitMask: 0b0000_0100),
+                new Address<byte>(0x2062_2F32, InventoryGreenBarrier, truthyValue: 1, bitMask: 0b0000_1000),
+                new Address<byte>(0x2062_2F32, InventoryYellowBarrier, truthyValue: 1, bitMask: 0b0001_0000),
+                new Address<byte>(0x2062_2F32, InventoryDarkBomb, truthyValue: 1, bitMask: 0b0100_0000),
+                new Address<byte>(0x2062_2F32, InventoryDarkBlast, truthyValue: 1, bitMask: 0b1000_0000),
 
-                new Address<byte>(0x2062_2F33, InventoryDarkInvul, expectedTruthyValue: 1, bitMask: 0b0000_0001),
-                new Address<byte>(0x2062_2F33, InventoryDarkGiant, expectedTruthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_2F33, InventoryDarkInvul, truthyValue: 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F33, InventoryDarkGiant, truthyValue: 1, bitMask: 0b0000_0010),
 
+                // ----
+                // Mission Information
+                // ----
+                new Address<float>(0x2062_2F8C, CurrentObjectiveCounter),
+                new Address<int>(0x2062_2F78, CurrentObjectiveTimer),
+                new Address<float>(0x2062_2F68, CurrentObjectiveScore),
+                // TODO guard status, another combo box
+                // TODO find praxis 1 addresses
+                new Address<int>(0x201B_5858, Praxis2BombHits),
+                // TODO find praxis 2 position vectors
+                new Address<int>(0x201B_442C, KrewHP),
+                new Address<int>(0x201B_4620, KrewCloneCounter),
+                
+                new Address<float>(0x201B_47E0, KrewPositionX), // TODO maybe implement ranges to hide values to disable box when not on the boss
+                new Address<float>(0x201B_47E4, KrewPositionY),
+                new Address<float>(0x201B_47E8, KrewPositionZ),
 
+                // TODO kor addresses, find
+
+                // ----
+                // Camera Controls
+                // ----
+                // TODO find camera addresses
+                new Address<float>(0x2082_7600, FOVControl),
+
+                // ----
+                // Secrets and Misc
+                // ----
+                new Address<byte>(0x2062_2F40, SecretToggleGoatee, truthyValue: 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F40, SecretMirrorWorld, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_2F40, SecretUnlimitedAmmo, truthyValue: 1, bitMask: 0b0000_0100),
+                new Address<byte>(0x2062_2F40, SecretInvulnerability, truthyValue: 1, bitMask: 0b0000_1000),
+                new Address<byte>(0x2062_2F40, SecretUnlimitedDarkJak, truthyValue: 1, bitMask: 0b0001_0000),
+                new Address<byte>(0x2062_2F42, SecretBigHeadMode, truthyValue: 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F42, SecretSmallHeadMode, truthyValue: 1, bitMask: 0b0000_0010),
+
+                new Address<int>(0x2062_2F94, StatsNumberOfAttacks),
+                new Address<float>(0x2062_2F2C, StatsNumberOfEcoCollected),
+
+                // ----
+                // Debug Functions
+                // ----
+                new Address<byte>(0x2014_9620, DebugBugReport, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2035_DB90, DebugProfiler, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_30C8, DebugMinimapFlashing, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_5B04, DebugLeafIndex, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_5F70, DebugLevelBuffer, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_66D8, DebugLevelInfo, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_6878, Debug2D3DInfo, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_8C14, DebugRenderingEffects, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_9618, DebugCwCcwStrdl, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_AA18, DebugCameraPosition, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_AA00, DebugAnimationChannels, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_AAC8, DebugEmptyChannels, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2035_E564, DebugStopRenderWalls, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2082_6E44, DebugInvertCamera, truthyValue: 1, bitMask: 0b0000_0010)
             };
+
+            // TODO animation controls are all functions, need to find a new way to do those
+            // TODO freeze position functions in mission information
         }
 
 
