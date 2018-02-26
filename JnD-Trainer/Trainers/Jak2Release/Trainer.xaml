@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:JnD_Trainer.Trainers.Jak2Release"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Trainer" Height="900" Width="900" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="Jak 2 - Release - Trainer" Height="900" Width="900" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.125*"/>
@@ -701,26 +701,17 @@
                     <Label Grid.Row="6" Grid.Column="0" Content="2D/3D Info"></Label>
                     <CheckBox x:Name="Debug2D3DInfo" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                    <Label Grid.Row="7" Grid.Column="0" Content="Effects of Rendering Level"></Label>
-                    <CheckBox x:Name="DebugRenderingEffects" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <Label Grid.Row="7" Grid.Column="0" Content="CW/CCW/STRDL"></Label>
+                    <CheckBox x:Name="DebugCwCcwStrdl" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                    <Label Grid.Row="8" Grid.Column="0" Content="CW/CCW/STRDL"></Label>
-                    <CheckBox x:Name="DebugCwCcwStrdl" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <Label Grid.Row="8" Grid.Column="0" Content="Camera Position"></Label>
+                    <CheckBox x:Name="DebugCameraPosition" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                    <Label Grid.Row="9" Grid.Column="0" Content="Camera Position"></Label>
-                    <CheckBox x:Name="DebugCameraPosition" Grid.Row="9" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <Label Grid.Row="9" Grid.Column="0" Content="Empty Channels"></Label>
+                    <CheckBox x:Name="DebugEmptyChannels" Grid.Row="9" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                    <Label Grid.Row="10" Grid.Column="0" Content="Animation Channels"></Label>
-                    <CheckBox x:Name="DebugAnimationChannels" Grid.Row="10" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="11" Grid.Column="0" Content="Empty Channels"></Label>
-                    <CheckBox x:Name="DebugEmptyChannels" Grid.Row="11" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="22" Grid.Column="0" Content="Stop Rendering Walls"></Label>
-                    <CheckBox x:Name="DebugStopRenderWalls" Grid.Row="23" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
-
-                    <Label Grid.Row="24" Grid.Column="0" Content="Invert Horizontal Camera"></Label>
-                    <CheckBox x:Name="DebugInvertCamera" Grid.Row="24" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                    <Label Grid.Row="10" Grid.Column="0" Content="Invert Horizontal Camera"></Label>
+                    <CheckBox x:Name="DebugInvertCamera" Grid.Row="10" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
                 </Grid>
             </ScrollViewer>

@@ -16,14 +16,13 @@ using Binarysharp.MemoryManagement;
 using System.Windows.Threading;
 using JnD_Trainer.src;
 
-namespace JnD_Trainer.Trainers.Jak2Release
-{
+namespace JnD_Trainer.Trainers.Jak2Release {
     /// <summary>
     /// Interaction logic for Trainer.xaml
     /// </summary>
     public partial class Trainer : Window {
-        static DispatcherTimer retryEmuConnection = new DispatcherTimer();
-        static DispatcherTimer updateTrainer = new DispatcherTimer();
+        private static DispatcherTimer retryEmuConnection = new DispatcherTimer();
+        private static DispatcherTimer updateTrainer = new DispatcherTimer();
         private static Process emuProcess = null;
         private static MemorySharp memEdit = null;
 
@@ -38,16 +37,6 @@ namespace JnD_Trainer.Trainers.Jak2Release
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-
-            retryEmuConnection.Tick += new EventHandler(ConnectToPcsx2);
-            retryEmuConnection.Interval = new TimeSpan(0, 0, 2);
-            retryEmuConnection.Start();
-
-            updateTrainer.Tick += new EventHandler(trainerFrame);
-            updateTrainer.Interval = TimeSpan.FromMilliseconds(50); // every 50 milliseconds 
-            updateTrainer.Start();
-            
-
             // -----
             // Init all Addresses with their respective component
             EditableAddresses = new List<Address> {
@@ -76,27 +65,27 @@ namespace JnD_Trainer.Trainers.Jak2Release
                 // ----
                 // Inventory
                 // ----
-                new Address<byte>(0x2062_2F30, InventoryGuns,    truthyValue: 1, bitMask: 0b0010_0000),
-                new Address<byte>(0x2062_2F30, InventoryBlaster, truthyValue: 1, bitMask: 0b0100_0000),
-                new Address<byte>(0x2062_2F30, InventoryScatter, truthyValue: 1, bitMask: 0b1000_0000),
+                new Address<byte>(0x2062_2F30, InventoryGuns, 1, bitMask: 0b0010_0000),
+                new Address<byte>(0x2062_2F30, InventoryBlaster, 1, bitMask: 0b0100_0000),
+                new Address<byte>(0x2062_2F30, InventoryScatter, 1, bitMask: 0b1000_0000),
 
-                new Address<byte>(0x2062_2F31, InventoryVulcan, truthyValue: 1, bitMask: 0b0000_0001),
-                new Address<byte>(0x2062_2F31, InventoryPeacemaker, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2062_2F31, InventoryJetboard, truthyValue: 1, bitMask: 0b0000_0100),
-                new Address<byte>(0x2062_2F31, InventoryDaxter, truthyValue: 1, bitMask: 0b0001_0000),
-                new Address<byte>(0x2062_2F31, InventoryDarkJak, truthyValue: 1, bitMask: 0b0010_0000),
-                new Address<byte>(0x2062_2F31, InventoryScatterUpgrade, truthyValue: 1, bitMask: 0b0100_0000),
-                new Address<byte>(0x2062_2F31, InventoryAmmoUpgrade, truthyValue: 1, bitMask: 0b1000_0000),
+                new Address<byte>(0x2062_2F31, InventoryVulcan, 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F31, InventoryPeacemaker, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_2F31, InventoryJetboard, 1, bitMask: 0b0000_0100),
+                new Address<byte>(0x2062_2F31, InventoryDaxter, 1, bitMask: 0b0001_0000),
+                new Address<byte>(0x2062_2F31, InventoryDarkJak, 1, bitMask: 0b0010_0000),
+                new Address<byte>(0x2062_2F31, InventoryScatterUpgrade, 1, bitMask: 0b0100_0000),
+                new Address<byte>(0x2062_2F31, InventoryAmmoUpgrade, 1, bitMask: 0b1000_0000),
 
-                new Address<byte>(0x2062_2F32, InventoryDamageUpgrade, truthyValue: 1, bitMask: 0b0000_0001),
-                new Address<byte>(0x2062_2F32, InventoryRedBarrier, truthyValue: 1, bitMask: 0b0000_0100),
-                new Address<byte>(0x2062_2F32, InventoryGreenBarrier, truthyValue: 1, bitMask: 0b0000_1000),
-                new Address<byte>(0x2062_2F32, InventoryYellowBarrier, truthyValue: 1, bitMask: 0b0001_0000),
-                new Address<byte>(0x2062_2F32, InventoryDarkBomb, truthyValue: 1, bitMask: 0b0100_0000),
-                new Address<byte>(0x2062_2F32, InventoryDarkBlast, truthyValue: 1, bitMask: 0b1000_0000),
+                new Address<byte>(0x2062_2F32, InventoryDamageUpgrade, 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F32, InventoryRedBarrier, 1, bitMask: 0b0000_0100),
+                new Address<byte>(0x2062_2F32, InventoryGreenBarrier, 1, bitMask: 0b0000_1000),
+                new Address<byte>(0x2062_2F32, InventoryYellowBarrier, 1, bitMask: 0b0001_0000),
+                new Address<byte>(0x2062_2F32, InventoryDarkBomb, 1, bitMask: 0b0100_0000),
+                new Address<byte>(0x2062_2F32, InventoryDarkBlast, 1, bitMask: 0b1000_0000),
 
-                new Address<byte>(0x2062_2F33, InventoryDarkInvul, truthyValue: 1, bitMask: 0b0000_0001),
-                new Address<byte>(0x2062_2F33, InventoryDarkGiant, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_2F33, InventoryDarkInvul, 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F33, InventoryDarkGiant, 1, bitMask: 0b0000_0010),
 
                 // ----
                 // Mission Information
@@ -110,7 +99,7 @@ namespace JnD_Trainer.Trainers.Jak2Release
                 // TODO find praxis 2 position vectors
                 new Address<int>(0x201B_442C, KrewHP),
                 new Address<int>(0x201B_4620, KrewCloneCounter),
-                
+
                 new Address<float>(0x201B_47E0, KrewPositionX), // TODO maybe implement ranges to hide values to disable box when not on the boss
                 new Address<float>(0x201B_47E4, KrewPositionY),
                 new Address<float>(0x201B_47E8, KrewPositionZ),
@@ -126,13 +115,13 @@ namespace JnD_Trainer.Trainers.Jak2Release
                 // ----
                 // Secrets and Misc
                 // ----
-                new Address<byte>(0x2062_2F40, SecretToggleGoatee, truthyValue: 1, bitMask: 0b0000_0001),
-                new Address<byte>(0x2062_2F40, SecretMirrorWorld, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2062_2F40, SecretUnlimitedAmmo, truthyValue: 1, bitMask: 0b0000_0100),
-                new Address<byte>(0x2062_2F40, SecretInvulnerability, truthyValue: 1, bitMask: 0b0000_1000),
-                new Address<byte>(0x2062_2F40, SecretUnlimitedDarkJak, truthyValue: 1, bitMask: 0b0001_0000),
-                new Address<byte>(0x2062_2F42, SecretBigHeadMode, truthyValue: 1, bitMask: 0b0000_0001),
-                new Address<byte>(0x2062_2F42, SecretSmallHeadMode, truthyValue: 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_2F40, SecretToggleGoatee, 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F40, SecretMirrorWorld, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_2F40, SecretUnlimitedAmmo, 1, bitMask: 0b0000_0100),
+                new Address<byte>(0x2062_2F40, SecretInvulnerability, 1, bitMask: 0b0000_1000),
+                new Address<byte>(0x2062_2F40, SecretUnlimitedDarkJak, 1, bitMask: 0b0001_0000),
+                new Address<byte>(0x2062_2F42, SecretBigHeadMode, 1, bitMask: 0b0000_0001),
+                new Address<byte>(0x2062_2F42, SecretSmallHeadMode, 1, bitMask: 0b0000_0010),
 
                 new Address<int>(0x2062_2F94, StatsNumberOfAttacks),
                 new Address<float>(0x2062_2F2C, StatsNumberOfEcoCollected),
@@ -140,24 +129,29 @@ namespace JnD_Trainer.Trainers.Jak2Release
                 // ----
                 // Debug Functions
                 // ----
-                new Address<byte>(0x2014_9620, DebugBugReport, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2035_DB90, DebugProfiler, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2062_30C8, DebugMinimapFlashing, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2014_5B04, DebugLeafIndex, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2014_5F70, DebugLevelBuffer, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2014_66D8, DebugLevelInfo, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2014_6878, Debug2D3DInfo, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2014_8C14, DebugRenderingEffects, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2014_9618, DebugCwCcwStrdl, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2014_AA18, DebugCameraPosition, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2014_AA00, DebugAnimationChannels, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2014_AAC8, DebugEmptyChannels, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2035_E564, DebugStopRenderWalls, truthyValue: 1, bitMask: 0b0000_0010),
-                new Address<byte>(0x2082_6E44, DebugInvertCamera, truthyValue: 1, bitMask: 0b0000_0010)
+                new Address<byte>(0x2014_9620, DebugBugReport, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2035_DB90, DebugProfiler, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2062_30C8, DebugMinimapFlashing, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_5B04, DebugLeafIndex, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_5F70, DebugLevelBuffer, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_66D8, DebugLevelInfo, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_6878, Debug2D3DInfo, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_9618, DebugCwCcwStrdl, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_AA18, DebugCameraPosition, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2014_AAC8, DebugEmptyChannels, 1, bitMask: 0b0000_0010),
+                new Address<byte>(0x2082_6E44, DebugInvertCamera, 1, bitMask: 0b0000_0010)
             };
 
             // TODO animation controls are all functions, need to find a new way to do those
             // TODO freeze position functions in mission information
+
+            retryEmuConnection.Tick += new EventHandler(ConnectToPcsx2);
+            retryEmuConnection.Interval = new TimeSpan(0, 0, 2);
+            retryEmuConnection.Start();
+
+            updateTrainer.Tick += new EventHandler(trainerFrame);
+            updateTrainer.Interval = TimeSpan.FromMilliseconds(50); // every 50 milliseconds 
+            updateTrainer.Start();
         }
 
 
@@ -166,43 +160,35 @@ namespace JnD_Trainer.Trainers.Jak2Release
         /// </summary>
         /// <param name="o"></param>
         /// <param name="args"></param>
-        private void ConnectToPcsx2(Object o, EventArgs args) {
+        private void ConnectToPcsx2(object o, EventArgs args) {
             // TODO will need to support when pcsx2 is closed after detect and re-connect
-            try
-            {
+            try {
                 emuProcess = Process.GetProcessesByName("pcsx2").First();
                 memEdit = new MemorySharp(emuProcess);
                 EmulatorStatus.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 150, 0));
                 EmulatorStatus.Content = "Connected";
                 retryEmuConnection.Stop();
             }
-            catch (System.InvalidOperationException exception)
-            {
+            catch (InvalidOperationException exception) {
                 Console.WriteLine("PCSX2 Still not opened"); // TODO no console output pls
                 EmulatorStatus.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
                 EmulatorStatus.Content = "Connecting...";
             }
         }
 
-        private void trainerFrame(Object o, EventArgs args) {
-
+        private void trainerFrame(object o, EventArgs args) {
             // If we havn't connected to PCSX2 yet, then don't do anything
             // TODO if disconnected, then restart the connect to pcsx2 timer
-            if (memEdit == null || emuProcess == null || emuProcess.HasExited) {
-                return;
-            }
+            if (memEdit == null || emuProcess == null || emuProcess.HasExited) return;
 
             // Loop through all addresses and update their values
-            foreach (Address addr in EditableAddresses) {
-                addr.UpdateUIElement(memEdit);
-            }
+            foreach (var addr in EditableAddresses) addr.UpdateUIElement(memEdit);
 
             // RAWB: TODO update lateral and vertical speed
         }
 
 
         private void returnToSplash_Click(object sender, RoutedEventArgs e) {
-
         }
     }
 }
