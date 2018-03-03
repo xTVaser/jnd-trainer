@@ -27,6 +27,7 @@ namespace JnD_Trainer.Trainers.Jak2Release {
         private static MemorySharp memEdit = null;
 
         private bool connected;
+        private bool skipWrite = false;
 
         public Trainer() {
             InitializeComponent();
@@ -142,6 +143,19 @@ namespace JnD_Trainer.Trainers.Jak2Release {
                 new Address<byte>(0x2082_6E44, DebugInvertCamera, 1, bitMask: 0b0000_0010)
             };
 
+            // Checkpoint Selector
+            // TODO add writability
+            foreach (KeyValuePair<int, string> level in Levels.levelDictionary) {
+                if (level.Key != 0) {
+                    ComboBoxItem newLevel = new ComboBoxItem();
+                    newLevel.Content = level.Value;
+                    newLevel.Tag     = level.Key;
+                    CheckpointSelector.Items.Add(newLevel);
+                }
+            }
+            CheckpointSelector.SelectedIndex = 0;
+
+
             // TODO animation controls are all functions, need to find a new way to do those
             // TODO freeze position functions in mission information
 
@@ -185,10 +199,36 @@ namespace JnD_Trainer.Trainers.Jak2Release {
             foreach (var addr in EditableAddresses) addr.UpdateUIElement(memEdit);
 
             // RAWB: TODO update lateral and vertical speed
+
+            // Check Current Checkpoint
+            int rawCheckpoint = memEdit.Read<int>(new IntPtr(0x2062_2FA0), isRelative: false);
+            skipWrite = true;
+            CheckpointSelector.SelectedIndex = findComboBoxItem(CheckpointSelector, Levels.levelDictionary[rawCheckpoint]);
+            skipWrite = false;
         }
 
 
         private void returnToSplash_Click(object sender, RoutedEventArgs e) {
+        }
+
+        private int findComboBoxItem(ComboBox cb, string key) {
+            int idx = 0;
+            foreach (ComboBoxItem cbItem in cb.Items) {
+                if (cbItem.Content.Equals(key))
+                    return idx;
+                idx++;
+            }
+            return 0;
+        }
+
+        // TODO disabled for now, looking for best way to deal with checkpoints
+        private void checkpointChanged(object sender, SelectionChangedEventArgs e) {
+        
+            if (!skipWrite && memEdit != null && emuProcess != null && !emuProcess.HasExited) {
+                ComboBoxItem selCheckpoint = (ComboBoxItem)CheckpointSelector.Items.GetItemAt(CheckpointSelector.SelectedIndex);
+                int value = (int)selCheckpoint.Tag;
+                memEdit.Write<int>(new IntPtr(0x2062_2FA0), value, isRelative: false);
+            }
         }
     }
 }

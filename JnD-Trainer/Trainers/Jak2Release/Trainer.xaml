@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JnD_Trainer.Trainers.Jak2Release"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Jak 2 - Release - Trainer" Height="900" Width="900" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.125*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="314*"/>
+            <RowDefinition Height="301*"/>
+            <RowDefinition Height="256*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="178*"/>
+            <ColumnDefinition Width="269*"/>
+            <ColumnDefinition Width="224*"/>
+            <ColumnDefinition Width="223*"/>
         </Grid.ColumnDefinitions>
 
         <GroupBox Grid.Row="0" Grid.Column="0"
@@ -601,7 +602,12 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="Checkpoint" TextWrapping="Wrap"/>
-                    <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                    <ComboBox x:Name="CheckpointSelector" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" IsEnabled="False">
+                        <ComboBoxItem Content="Unknown Checkpoint">
+                            <ComboBoxItem.Tag>
+                                <system:Int32>0</system:Int32>
+                            </ComboBoxItem.Tag>
+                        </ComboBoxItem>
                         <!-- populate programmatically with list of checkpoints -->
                     </ComboBox>
 
@@ -718,7 +724,7 @@
         </GroupBox>
 
         <GroupBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1"
-                  Header="Secrets and Miscellaneous Controls">
+                  Header="Secrets and Statistics">
             <ScrollViewer>
                 <Grid>
                     <Grid.RowDefinitions>
